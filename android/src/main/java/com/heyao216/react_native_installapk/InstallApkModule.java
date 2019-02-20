@@ -46,7 +46,6 @@ public class InstallApkModule extends ReactContextBaseJavaModule {
         
         if (Build.VERSION.SDK_INT >= 24) {
           String packageName = _context.getPackageManager().getNameForUid(Binder.getCallingUid());
-          System.out.println("filePath: " + path);
 
           Uri fileUri = FileProvider.getUriForFile(_context, packageName + ".provider", file);
           Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);

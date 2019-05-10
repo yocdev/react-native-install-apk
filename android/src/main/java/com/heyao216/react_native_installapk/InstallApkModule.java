@@ -1,8 +1,5 @@
 package com.heyao216.react_native_installapk;
 
-import android.content.pm.PackageManager;
-import android.content.pm.PackageInfo;
-import android.content.pm.ApplicationInfo;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -52,6 +49,7 @@ public class InstallApkModule extends ReactContextBaseJavaModule {
 
           intent.setData(fileUri);
           intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+          intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
           _context.startActivity(intent);
         } else {
           Uri fileUri = Uri.fromFile(file);
